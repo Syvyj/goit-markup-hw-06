@@ -56,20 +56,30 @@ p {
 
 /*----------LOGO---------*/
 .header-logo {
-  font-family: "Raleway", sans-serif;
+  /* align-items: center;
+  margin-right: 76px;
+  padding: 24px 0; */
   font-weight: 700;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
+  font-family: "Raleway", sans-serif;
   display: flex;
-  align-items: center;
-  margin-right: 76px;
-  padding: 24px 0;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0px;
+  display: block;
+  padding: 16px 0;
 }
 .logo-span {
   color: #2e2f42;
+}
+
+.nav-links,
+.contact-links {
+  display: none;
 }
 
 /*----------MENU---------*/
@@ -80,9 +90,9 @@ p {
   letter-spacing: 0.02em;
   color: #2e2f42;
   text-transform: none;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 40px; */
 }
 
 .nav-item {
@@ -132,9 +142,9 @@ p {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: #434455;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 40px; */
 }
 .contact-item {
 }
@@ -150,17 +160,133 @@ p {
 .contact-item-links:focus {
   color: #404bbf;
 }
+
+.burger-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.burger-icon {
+  display: block;
+  fill: #2f2f37;
+}
+
+/* ----------------MOBILE-MENU--------------- */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu-container {
+  position: relative;
+  padding-top: 72px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 4px;
+  background-color: #e7e9fc;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 64px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-close-button {
+  fill: black;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.studio {
+  color: #404bbf;
+}
+.mobile-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.mobile-address-list {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #434455;
+  font-style: normal;
+}
+.tel {
+  color: #4d5ae5;
+}
+.mobile-menu-nav {
+  margin-bottom: auto;
+}
+.icons-mobile-menu {
+  display: flex;
+  gap: 40px;
+}
+.mobile-icon-item {
+  width: 40px;
+  height: 40px;
+}
+
 /*----------MAIN---------*/
 .main {
-  max-width: 1440px;
-  padding-top: 188px;
-  padding-bottom: 188px;
+  max-width: 320px;
+  width: 100%;
+  padding: 72px 0 72px;
   background-image: linear-gradient(
       to bottom,
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(/images/people-office.jpg);
+    url(/images/Mobile/Dark-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -174,13 +300,14 @@ p {
 }
 .main-title {
   font-weight: 700;
-  font-size: 56px;
-  line-height: 107%;
   letter-spacing: 0.02em;
   text-align: center;
   color: #fff;
-  max-width: 496px;
-  margin-bottom: 40px;
+  font-size: 36px;
+  line-height: 111%;
+  max-width: 320px;
+  margin-bottom: 72px;
+  padding: 0 52px;
 }
 .title-button {
   font-weight: 500;
@@ -509,7 +636,7 @@ p {
 .footer-soc-icon {
   fill: #f4f4fd;
 }
-
+/* -----MODAL----- */
 .modal-overlay {
   width: 100%;
   height: 100%;
@@ -530,8 +657,12 @@ p {
 }
 
 .modal {
-  width: 408px;
-  min-height: 584px;
+  /* width: 408px;
+  min-height: 584px; */
+  /* padding: 72px 24px 24px 24px; */
+  padding: 72px 16px 24px 16px;
+  width: 288px;
+  height: 628px;
   background: #fcfcfc;
   border-radius: 4px;
   position: absolute;
@@ -540,7 +671,6 @@ p {
   transform: translate(-50%, -50%);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  padding: 72px 24px 24px 24px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-button {
@@ -808,6 +938,48 @@ p {
     width: 100%;
     max-width: 768px;
   }
+  /* -----HEADER------ */
+  .header-logo {
+    align-items: center;
+    /* margin-right: 76px; */
+    margin-right: 120px;
+    padding: 24px 0;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .contact-links {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* gap: 40px; */
+  }
+  .burger-btn {
+    display: none;
+  }
+  /* -----MAIN------ */
+  .main {
+    max-width: 768px;
+    width: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(/images/Dark-bg-tablet.png);
+  }
+  .main-title {
+    font-size: 56px;
+    line-height: 107%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+    max-width: 496px;
+    margin-bottom: 36px;
+    padding: 0; /* new */
+  }
   /* -----ABOUT US------ */
   .about-us {
     padding: 96px 0 96px;
@@ -875,6 +1047,12 @@ p {
     width: 264px;
   }
 }
+/* -----MODAL------ */
+.modal {
+  width: 408px;
+  min-height: 584px;
+  padding: 72px 24px 24px 24px;
+}
 
 /* ------------MEDIA DESKTOP----------- */
 @media screen and (min-width: 1158px) {
@@ -883,6 +1061,33 @@ p {
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  /* -----HEADER------ */
+  .header-logo {
+    margin-right: 76px;
+  }
+  .contact-links {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  /* -----MAIN------ */
+  .main {
+    max-width: 1440px;
+    padding-top: 188px;
+    padding-bottom: 188px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(/images/people-office.png);
+  }
+  .main-title {
+    margin-bottom: 48px;
+    padding: 0;
   }
   /* -----ABOUT US------ */
   .about-us {
