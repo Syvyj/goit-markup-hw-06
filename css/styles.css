@@ -286,7 +286,7 @@ p {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(./images/Mobile/Dark-bg.png);
+    url(../images/Mobile/Dark-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -968,7 +968,7 @@ p {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(./images/Dark-bg-tablet.jpg);
+      url(../images/Dark-bg-tablet.jpg);
   }
   .main-title {
     font-size: 56px;
@@ -1083,7 +1083,7 @@ p {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(./images/people-office.jpg);
+      url(../images/people-office.jpg);
   }
   .main-title {
     margin-bottom: 48px;
